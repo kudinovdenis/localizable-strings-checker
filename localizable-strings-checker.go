@@ -114,7 +114,7 @@ func processDiff(prDiff PRDiff) {
 }
 
 func checkString(str string) {
-	matched, err := regexp.Match("\";$", []byte(str))
+	matched, err := regexp.Match("(\".+?\" = \".+?\";$)", []byte(str))
 	if err != nil {
 		fmt.Print("Error checking " + str + ". Error:")
 		fmt.Print(err)
